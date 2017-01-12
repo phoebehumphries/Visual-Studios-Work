@@ -16,11 +16,17 @@ namespace Classes
             if (people == null)
             {
                 people = new List<Person>();
+
+                {
+
+                }
             }
+
             menuCode();
             //newUsers();
             //printListOfUsers();
-            waitForKeyPress(); 
+         //   waitForKeyPress();
+
         }
         static void createTestUsers()
         {
@@ -50,22 +56,28 @@ namespace Classes
         static void newUsers()
         {
             Person p0 = new Person();
+
             Console.WriteLine("What is your firstname?");
             string new_firstname = Console.ReadLine();
             p0.Firstname = new_firstname;
+
             Console.WriteLine("What is your surname?");
             string new_surname = Console.ReadLine();
             p0.Surname = new_surname;
+
             Console.WriteLine("Please enter your date of birth in the form, dd/mm/yyyy");
             string new_dob = Console.ReadLine();
             DateTime dt0 = Convert.ToDateTime(new_dob);
-            p0.Dob = (dt0);
-            people.Add(p0);
-            
-          
 
+
+
+            p0.Dob = (dt0);
+
+            people.Add(p0);
+          
            
         }
+           
 
 
         static void printListOfUsers()
@@ -74,36 +86,61 @@ namespace Classes
             foreach (var person in people)
             {
                 Console.WriteLine(string.Format("{0} {1} was born on the {2} and they are {3} years old.",
-                    person.Firstname, person.Surname,
-                    person.Dob.ToString("dd/mm/yyyy"), person.Age));
+                    person.Firstname, person.Surname, person.Dob.ToString("dd/MM/yyyy"), person.Age));
 
             }
         }
+
+
+
+
+
+
         static void menuCode()
+
         {
-            Console.WriteLine("Welcome to the menu!");
-            Console.WriteLine("Please select one of the following:");
-            Console.WriteLine("1 - Create a new profile");
-            Console.WriteLine("2 - Print the profile list");
-            Console.WriteLine("3 - Exit the menu");
 
-            Console.Write("What do you want to do? ");
-            int menu = Console.Read();
+            
+            {
+                Console.WriteLine();
+                Console.WriteLine("Welcome to the menu!");
+                Console.WriteLine();
+                Console.WriteLine("Type one of the following:");
+                Console.WriteLine();
+                Console.WriteLine("New - Create New Profile ");
+                Console.WriteLine("Profiles - Print List of Profiles ");
+                Console.WriteLine("Exit - Exit Program ");
+                Console.WriteLine();
 
-            if (menu == '1')
-                newUsers();
+                Console.WriteLine();
+                Console.WriteLine("Enter choice: ");
+                string menuchoice = (Console.ReadLine());
 
-            //else menu == '2'
-              //  printListOfUsers();
-           
+              if (menuchoice == "New") 
+                {
+                    newUsers();
+                    printListOfUsers();
+                    menuCode();
+                }
+              
+
+               if (menuchoice == "Profiles")
+                {
+                    printListOfUsers();
+                    menuCode();
+                }
+
+               if (menuchoice == "Exit")
+
+                {
+                    waitForKeyPress();
+                }
 
 
 
 
 
-
-
-
+            }
 
         }
         
@@ -115,5 +152,6 @@ namespace Classes
             Console.ReadKey();
         }
     }
-
 }
+
+
