@@ -16,9 +16,10 @@ namespace Person_Input
             if (people == null)
             {
                 people = new List<Person>();
-            }
+            }   //the list.
 
             menuCode();
+            //this is the code that is being run.
            
         }
         static void createTestUsers()
@@ -49,28 +50,31 @@ namespace Person_Input
         static void newUsers()
         {
             Person p0 = new Person();
+            //creates new person, called p0.
             Console.WriteLine("What is your firstname?");
             string new_firstname = Console.ReadLine();
+            //asks the question and sets what the user inputs as new_firstname.
             p0.Firstname = new_firstname;
+            //This sets the user input as equal to the new person (p0) Firstname's
             Console.WriteLine("What is your surname?");
             string new_surname = Console.ReadLine();
             p0.Surname = new_surname;
+            //same for surname
             Console.WriteLine("Please enter your date of birth in the form, dd/mm/yyyy");
             string new_dob = Console.ReadLine();
+            //does the same but for date of birth.
             DateTime dt0 = Convert.ToDateTime(new_dob);
+            //converting the new_dob to DateTime format.
             p0.Dob = (dt0);
+            //setting the p0.Dob to the converted new_dob (aka dt0)
             people.Add(p0);
+            //adding all of the p0 Person to the list. (appending it.)
 
             printListOfUsers();
             Console.WriteLine();
 
-
-
-
-
         }
-
-
+        
         static void printListOfUsers()
         {
             //interates through the people list and print's their details.
@@ -80,15 +84,15 @@ namespace Person_Input
                 Console.WriteLine(string.Format("{0} {1} was born on the {2} and they are {3} years old.",
                     person.Firstname, person.Surname,
                     person.Dob.ToString("dd/MM/yyyy"), person.Age));
-
             }
         }
         static void menuCode()
         {
             var loop = true;
             while (loop == true)
+                //loop, it always equals true therefore always run.
             {
-                
+                //this is the main text for the menu.
                 Console.WriteLine("Welcome to the menu!");
                 Console.WriteLine();
                 Console.WriteLine("Please select one of the following:");
@@ -101,6 +105,7 @@ namespace Person_Input
                 string menuchoice = (Console.ReadLine());
 
                 if (menuchoice == "New")
+                //if the user types, "New" then the following code runs.
                 {
                     newUsers();
                     Console.WriteLine();
@@ -108,6 +113,7 @@ namespace Person_Input
                 if (menuchoice == "Profiles")
 
                 {
+                    createTestUsers();
                     printListOfUsers();
                     Console.WriteLine();
                 }
@@ -116,6 +122,7 @@ namespace Person_Input
                 {
                     waitForKeyPress();
                     break;
+                    //breaks the loop after pressing the key.
 
                 }
             }
