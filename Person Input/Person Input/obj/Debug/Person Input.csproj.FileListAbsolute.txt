@@ -1,0 +1,6 @@
+c:\users\phoeb\documents\visual studio 2015\Projects\Person Input\Person Input\bin\Debug\Person Input.exe.config
+c:\users\phoeb\documents\visual studio 2015\Projects\Person Input\Person Input\bin\Debug\Person Input.exe
+c:\users\phoeb\documents\visual studio 2015\Projects\Person Input\Person Input\bin\Debug\Person Input.pdb
+c:\users\phoeb\documents\visual studio 2015\Projects\Person Input\Person Input\obj\Debug\Person Input.csprojResolveAssemblyReference.cache
+c:\users\phoeb\documents\visual studio 2015\Projects\Person Input\Person Input\obj\Debug\Person Input.exe
+c:\users\phoeb\documents\visual studio 2015\Projects\Person Input\Person Input\obj\Debug\Person Input.pdb
