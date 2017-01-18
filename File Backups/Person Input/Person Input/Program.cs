@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Person_Input
 {
-    class Program
+  public class Program
     {
         static List<Person> people;
 
@@ -46,7 +46,7 @@ namespace Person_Input
             people.Add(p2);
         }
 
-        static void newUsers()
+       public static void newUsers()
         {
             Person p0 = new Person();
             Console.WriteLine("What is your firstname?");
@@ -63,15 +63,10 @@ namespace Person_Input
 
             printListOfUsers();
             Console.WriteLine();
-
-
-
-
-
+  
         }
-
-
-        static void printListOfUsers()
+        
+       public static void printListOfUsers()
         {
             //interates through the people list and print's their details.
             foreach (var person in people)
@@ -83,15 +78,43 @@ namespace Person_Input
 
             }
         }
-        static void menuCode()
+
+       public static void backToMenu()
+            //this is the code how the menu has the option to go back to the start.
+        {
+            Console.WriteLine("Do you want to go back to the menu? (Y/N)");
+            string loop2Choice = Console.ReadLine();
+
+            var loop = true;
+            while (loop == true)
+            {  //you can remove the {} and it will be fine without the break; after the menuCode();
+                if (loop2Choice == "Y")
+                {
+                    menuCode();
+                    break;
+                }
+
+                if (loop2Choice == "N")
+                { 
+                waitForKeyPress();
+                break;
+
+              }
+
+           }               
+            
+        }
+        
+     public static void menuCode()
         {
             var loop = true;
             while (loop == true)
+            //this is the loop
             {
                 
                 Console.WriteLine("Welcome to the menu!");
                 Console.WriteLine();
-                Console.WriteLine("Please select one of the following:");
+                Console.WriteLine("Please type one of the following:");
                 Console.WriteLine("New - Create a new profile");
                 Console.WriteLine("Profiles - View the profile list");
                 Console.WriteLine("Exit - Exit the menu");
@@ -104,28 +127,35 @@ namespace Person_Input
                 {
                     newUsers();
                     Console.WriteLine();
+                    backToMenu();
+                    break;
+
                 }
                 if (menuchoice == "Profiles")
 
                 {
                     printListOfUsers();
                     Console.WriteLine();
-                }
 
+                    backToMenu();
+                    break;
+                    
+                }
+               
                 if (menuchoice == "Exit")
                 {
                     waitForKeyPress();
                     break;
 
                 }
-            }
+             }
 
-        }
+          }
 
-        static void waitForKeyPress()
+      public static void waitForKeyPress()
         {
             Console.WriteLine();
-            Console.WriteLine("Press Key to close...");
+            Console.WriteLine("Press key to close....");
 
             Console.ReadKey();
         }
